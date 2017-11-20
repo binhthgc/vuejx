@@ -1,3 +1,0 @@
-# VueJX
-
-JSON Form builder
