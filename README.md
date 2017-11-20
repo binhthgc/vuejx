@@ -1,2 +1,3 @@
-# vuejx
-Json schema to Form
+# VueJX
+
+JSON Form builder
