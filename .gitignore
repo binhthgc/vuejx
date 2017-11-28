@@ -19,3 +19,6 @@ bin-release/
 # information for Eclipse / Flash Builder.
 temp/*
 /temp/*
+demo/.DS_Store
+demo/assets/.DS_Store
+demo/index copy.html

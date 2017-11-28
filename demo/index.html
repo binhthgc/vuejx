@@ -1,14 +1,981 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>vuejx</title>
-    <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet" type="text/css">
-    
-  </head>
-  <body>
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>vuejx</title>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet" type="text/css">
+
+  <!-- vuejs -->
+  <script src="../dist/axios.min.js"></script>
+  <script type="text/javascript" src="../dist/vue.min.js"></script>
+  <!--<script type="text/javascript" src="../dist/vuejx.min.js"></script>-->
+  <script type="text/javascript" src="../temp/vuejx.js"></script>
+  
+  <script type="text/javascript" src="https://rawgit.com/ajaxorg/ace-builds/master/src-min-noconflict/ace.js"></script>
+  <script type="text/javascript" src="../temp/vue-uploader.js"></script>
+
+  <!-- vuetifyjs -->
+  <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
+
+  <link href="https://vuejx.herokuapp.com/static/css/app.9b5bba1fa212b0346b265bba090fdf13.css" rel="stylesheet">
+  <link href="https://unpkg.com/vuetify/dist/vuetify.min.css" rel="stylesheet">
+  <script src="https://unpkg.com/vuetify/dist/vuetify.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/lodash/4.13.1/lodash.js"></script>
+
+  <style type="text/css">.slider__thumb--label__container {
+    display: block !important;
+}.primary{background-color:#1976D2 !important;border-color:#1976D2 !important;}.primary--text{color:#1976D2 !important;}.secondary{background-color:#424242 !important;border-color:#424242 !important;}.secondary--text{color:#424242 !important;}.accent{background-color:#82B1FF !important;border-color:#82B1FF !important;}.accent--text{color:#82B1FF !important;}.error{background-color:#FF5252 !important;border-color:#FF5252 !important;}.error--text{color:#FF5252 !important;}.info{background-color:#2196F3 !important;border-color:#2196F3 !important;}.info--text{color:#2196F3 !important;}.success{background-color:#4CAF50 !important;border-color:#4CAF50 !important;}.success--text{color:#4CAF50 !important;}.warning{background-color:#FFC107 !important;border-color:#FFC107 !important;}.warning--text{color:#FFC107 !important;}.application a{color: #1976D2;}</style>
+</head>
+
+<body>
+
+  <div data-app="true" class="application theme--light">
+    <div class="application--wrap">
+      <main>
+        <div class="layout wrap">
+          <div class="layout view jx-content">
+            <div class="layout row jx-content-wrap">
+              <div class="flex xs12 sm12">
+                
+                
+                <!-- Rating Form -->
+                <div class="my-5 tabs tabs--scroll-bars">
+                  <div class="green darken-2 tabs__bar theme--dark">
+                    <div class="tabs__wrapper tabs__wrapper--scrollable tabs__wrapper--overflow">
+                      <ul class="tabs__container">
+                        <li class="tabs__li">
+                          <a href="#tab-3-1" class="tabs__item tabs__item--active" data-ripple="false">
+                            <i aria-hidden="true" class="material-icons icon">link</i> #1 Rating Form:
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="tabs__items">
+                    <div class="tabs__content" id="tab-3-1">
+                      <div class="card card--flat" data-ripple="false" >
+                        <div class="card__text">
+                          
+                          <div id="rating_form_template">
+                            <div class="layout row wrap">
+
+                              <div class="flex xs6" jx-bind="fullName">
+
+                              </div>
+                              <div class="flex xs6" jx-bind="fullEmail">
+                                
+                              </div>
+                            </div>
+                            <div class="layout row wrap">
+                            
+                              <div class="flex xs6" jx-bind="fullTime">
+                            
+                              </div>
+                              <div class="flex xs6" jx-bind="fullDate">
+                            
+                              </div>
+                              <div class="flex xs6" jx-bind="fullMonth">
+                            
+                              </div>
+                            </div>
+                            <div class="layout row wrap">
+                              
+                                <div class="flex xs6" jx-bind="fullTimeView">
+                              
+                                </div>
+                                <div class="flex xs6" jx-bind="fullDateView">
+                              
+                                </div>
+                                <div class="flex xs6" jx-bind="fullMonthView">
+                              
+                                </div>
+                              </div>
+                              <div class="layout row wrap">
+                                
+                                  <div class="flex xs12" jx-bind="fullSlider">
+                                
+                                  </div>
+                                </div>
+                                <div class="layout row wrap">
+                                
+                                  <div class="flex xs12" jx-bind="fullSelect">
+                                
+                                  </div>
+                                  <div class="flex xs12" jx-bind="fullSwitches">
+                                    
+                                      </div>
+                                </div>
+                                <div class="layout row wrap">
+                                  
+                                    <div class="flex xs12" jx-bind="fullRadioBoxs">
+                                  
+                                    </div>
+                                    <div class="flex xs12" jx-bind="fullCheckBoxs">
+                                      
+                                        </div>
+                                  </div>
+                                
+                          </div>
+                          
+                          <div id="rating_form">
+
+                          </div>
+                          <div id="fileuploadel">
+                            
+                                                        <uploader :options="options" class="uploader-example" ref="uploader" @file-complete="fileComplete" @complete="complete"></uploader>
+                                                        
+                            
+                                                      </div>
+                          <div id="sssssdfdf">
+                              <v-form ref="form" enctype="multipart/form-data" >
+                                <jx-ace editor-id="editorD" :content="content"></jx-ace>
+                                <vue-editor id="editor"
+                                  useCustomImageHandler
+                                  @imageAdded="handleImageAdded" v-model="content">
+                                </vue-editor>
+                                <jx-rate
+                                v-model="value3"
+                                :ratings="ratings"
+                                show-text>
+                              </jx-rate>
+                              <v-btn block color="primary" @click.native="snackbar = true">Show Snackbar</v-btn>
+                                  <v-btn @click.native="uploadFiles" color="primary">Primary</v-btn>
+                                <br/>
+                                <jx-avata-upload v-model="filename" 
+                                  :image="image" 
+                                  :imageinit="imageinit" 
+                                  :uploadapi="uploadapi" 
+                                  :deleteapi="deleteapi" 
+                                  :pk="pk" 
+                                  :groupid="groupid" 
+                                  @show-snackbar-detail="snackbarCall" >
+                                </jx-avata-upload>
+                                  
+                                <v-snackbar :timeout="2000" :top="true" :bottom="false" :right="true" :left="false" :multi-line="true" :vertical="false" v-model="snackbar" >
+                                  <v-icon flat color="white">check_circle</v-icon> {{ text }}
+                                  <v-btn flat color="red" @click.native="snackbar = false">Close</v-btn>
+                                </v-snackbar>
+                              
+
+                                
+                              <v-snackbar
+                              :timeout="2000"
+                              :top="true"
+                              :bottom="false"
+                              :right="false"
+                              :left="false"
+                              :multi-line="true"
+                              :vertical="false"
+                              v-model="snackbarerror"
+                              class="snackbar-error"
+                            >
+                              <v-icon flat color="white" >block</v-icon> {{ text }}
+                              <v-btn flat color="white" @click.native="snackbarerror = false">Close</v-btn>
+                            </v-snackbar>
+
+
+                            <v-btn color="primary" @click.native.stop="dialog = true">Open Dialog</v-btn>
+                            <v-dialog v-model="dialog" fullscreen transition="fade-transition" :overlay=false>
+                              
+                              <v-card>
+                                <v-toolbar dark color="primary">
+                                  <v-btn icon @click.native="dialog = false" dark>
+                                    <v-icon>close</v-icon>
+                                  </v-btn>
+                                  <v-toolbar-title>Settings</v-toolbar-title>
+                                  <v-spacer></v-spacer>
+                                  <v-toolbar-items>
+                                    <v-btn dark flat @click.native="dialog = false">Save</v-btn>
+                                  </v-toolbar-items>
+                                </v-toolbar>
+                                
+                              </v-card>
+                            </v-dialog>
+
+                            <uploader :options="options" class="uploader-example" ref="uploader" @file-complete="fileComplete" @complete="complete"></uploader>
+                            
+                            <v-card >
+                                <v-fab-transition>
+                                <v-text-field
+                                name="input-1"
+                                label="Label Text"
+                                id="testing"
+                                loading
+                                v-show="!hidden"
+                              ></v-text-field>
+                              </v-fab-transition>
+                                <v-fab-transition>
+                                    
+                                  
+                                    <v-btn
+                                      color="pink"
+                                      fab
+                                      small
+                                      v-show="!hidden"
+                                    >
+                                      <v-icon>add</v-icon>
+                                    </v-btn>
+  
+                                  </v-fab-transition>
+                                  
+                                  
+                            </v-card>
+
+                            <v-btn color="primary" @click.native="hidden = !hidden">
+                                {{ hidden ? 'Show' : 'Hide' }}
+                              </v-btn>
+                             
+                            
+                          </v-form>
+
+
+                          
+                          </div>
+                          
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <style>
+    .ace_editor {
+    min-height: 100px;
+}
+  .jx-indicator{
+    position: absolute;
+    right: 0;
+    top: 26px;
+    color: gray;
+  }
+.switch-middle{
+  margin-top: 25px;
+    display: block;
+    margin-left: -15px;
+}
+html .flex {
+    padding: 0 15px;
+}
+html .ql-toolbar.ql-snow {
+    background: #f5f5f5;
+}
+html .quillWrapper .ql-toolbar.ql-snow,
+html .quillWrapper .ql-container.ql-snow  {
+    border: 1px solid #f5f5f5;
+}
+
+.input-group--selection-controls__container__right .input-group__input .input-group--selection-controls__container{
+  position: absolute !important;
+    right: 15px;
+    top: 15px;
+}
+.input-group--selection-controls__container__right.input-group.input-group--selection-controls.checkbox .input-group__input .icon--selection-control{
+  position: absolute;
+    right: -100%;
+    margin-right: 15px;
+}
+.input-group--switch_inline .input-group--selection-controls__container__right.input-group.input-group--selection-controls.switch label{
+  left: 0;
+}
+
+.input-group--switch_inline .switch-control{
+  display: flex;
+  display: -webkit-box;
+    margin-top: 19px;
+    padding-left: 0px;
+}
+.input-group--switch_inline .input-group__append-icon{
+  position: absolute;
+  right: 15px;
+}
+.input-group--prepend-icon.switch .input-group__input .input-group__prepend-icon + .input-group--selection-controls__container .input-group--selection-controls__ripple{
+  left: 0px;
+}
+.input-group.input-group--selection-controls.input-group--prepend-icon.switch label{
+  left: 25px;
+}
+.input-group--switch_inline .input-group.input-group--selection-controls.input-group--prepend-icon.switch label{
+  left: 55px;
+}
+.switch-control{
+  margin-top: 20px;
+}
+.input-group--full_label {
+  display: inherit;
+}
+.input-group--full_label .switch-control{
+  margin-top: 0px;
+  padding-left: 0;
+}
+.input-group--switch_inline .input-group--selection-controls.checkbox label{
+  
+}
+.input-group--switch_inline.input-group--full_label .input-group--selection-controls.checkbox label{
+  top: 0px;
+}
+.input-group--full_label .radio-group--column{
+  padding-top: 0px;
+}
+.input-group--switch_inline .radio-group--column{
+  padding-top: 0px;
+}
+.input-group--switch_inline .radio-group--column .input-group__input {
+    display: flex;
+    display: -webkit-box;
+}
+
+
+/* Generals */
+pre{
+  background: #eee;
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 3px;
+}
+
+/* style star ratting component */
+.star-rating__checkbox {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+.star-rating__star {
+  display: inline-block;
+  padding: 3px;
+  vertical-align: middle;
+  line-height: 1;
+  font-size: 1.5em;
+  color: #ABABAB;
+  transition: color .2s ease-out;
+}
+.star-rating__star:hover {
+  cursor: pointer;
+}
+.star-rating__star.is-selected,
+.star-rating__star.is-hover {
+  color: #FFD700;
+}
+.star-rating__star.is-disabled:hover {
+  cursor: default;
+}
+
+.star-rating__star.is-selected.is-disabled{
+  color: #ABABAB;
+}
+
+.jx-avatar-upload {
+    border: 1px dashed #d9d9d9;
+    border-radius: 6px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+      display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    width: 200px;
+    height: 200px;
+}
+
+.avatar-uploader-icon {
+    font-size: 28px;
+    color: #8c939d;
+    width: 178px;
+    height: 178px;
+    line-height: 178px;
+    text-align: center;
+    width: 100px;
+}
+
+.jx-avatar-upload__input {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 200px;
+    width: 200px;
+    cursor: pointer;
+}
+.jx-avatar-upload__input_left{
+  opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 200px;
+    width: 100px;
+    cursor: pointer;
+    z-index: 2;
+    pointer-events: all;
+}
+.avatar-icon{
+  width: 200px;
+    height: 200px;
+    font-size: 50px;
+}
+.jx-avatar-title{
+  position: absolute;
+    top: 0;
+    left: 0;
+    height: 200px;
+    width: 200px;
+    padding-top: 125px;
+}
+.jx-avatar-img{
+  width: 200px;
+    height: 200px;
+    border-radius: 5px;
+}
+.jx-avatar-img-wrap{
+  width: 200px;
+    height: 200px;
+    border-radius: 5px;
+    position: relative;
+}
+.avatar-change{
+  position: absolute;
+    left: 0;
+    top: 0;
+    width: 100px;
+    height: 200px;
+    font-size: 50px;
+    color: hsla(0, 0%, 98%, 0.8) !important;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.jx-avatar-upload__input_left:hover + .avatar-change{
+  transform: rotate(360deg);
+  color: #2076d2 !important;
+}
+.avatar-remove{
+  position: absolute;
+  top: 0;
+    right: 0;
+    width: 100px;
+    height: 200px;
+    font-size: 50px;
+    color: hsla(0, 0%, 98%, 0.8) !important;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.jx-avatar-tool{
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.jx-avatar-tool:hover{
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.avatar-change{
+  transition: all 0.5s linear;
+  position: relative;
+  z-index: 1;
+  float: left;
+}
+
+.avatar-remove{
+  transition: all 0.5s linear;
+  position: relative;
+  z-index: 1;
+}
+
+.avatar-remove:hover{
+  transform: rotate(180deg);
+  color: red !important;
+}
+
+.el-upload-list__item-actions {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    cursor: default;
+    text-align: center;
+    color: #fff;
+    opacity: 0;
+    font-size: 20px;
+    background-color: rgba(0,0,0,.5);
+    transition: opacity .3s;
+    z-index: 5;
+}
+.el-upload-list__item-actions:hover {
+    opacity: 1;
+    border-radius: 5px;
+}
+
+.snack.snackbar-error {
+    background-color: #b71c1c;
+}
+
+*:hover, *:focus{
+    outline: 0;
+}
+  </style>
+  <script type="text/javascript">
+
+    document.addEventListener('DOMContentLoaded', function (event) {
+
+      new Vue({
+        el: "#fileuploadel",
+        data: {
+          options: {
+            target: 'https://jsonplaceholder.typicode.com/posts', // '//jsonplaceholder.typicode.com/posts/',
+            testChunks: false,
+            headers: {
+              groupid: 12
+            }
+          },
+          attrs: {
+            accept: 'image/*'
+          }
+        },
+        methods: {
+          complete () {
+            console.log('complete', arguments)
+          },
+          fileComplete () {
+            console.log('file complete', arguments)
+          }
+        },
+        mounted () {
+          this.$nextTick(() => {
+            window.uploader = this.$refs.uploader.uploader
+          })
+        }
+      });
+
+
+      console.log('DOM fully loaded and parsed')
+      new Vue({
+        el: "#sssssdfdf",
+        data: {
+          last: '',
+          value: 0,
+          value3: null,
+          ratings: ['oops', 'disappointed', 'normal', 'good', 'a', 'v', 'd', 'e', 'f', 'ad', 'ưew', 'fdfd', 'great'],
+          hidden: false,
+          time: null,
+          date: null,
+          modal2: false,
+          modal: false,
+          picker: null,
+          valid: true,
+          red: 0,
+          e6: [],
+          e7: [],
+          states: [
+            { state: 'Florida', abbr: 1 },
+            { state: 'Georgia', abbr: 2 },
+            { state: 'Nebraska', abbr: 3 },
+            { state: 'California', abbr: 4 },
+            { state: 'New York', abbr: 5 }
+          ],
+          "item-text": "state",
+          "item-value": "abbr",
+          image: "sdf13213",
+          imageinit: "sdfsdfsdfs",
+          imageName:'uploadAV',
+          filename: "AVATACHANGE",
+          formDataUpload: null,
+          uploadapi: "https://jsonplaceholder.typicode.com/posts",
+          deleteapi: "https://jsonplaceholder.typicode.com/posts",
+          content: '<h1>Some initial content</h1>'  ,
+            options: {
+            target: '//localhost:3000/upload', // '//jsonplaceholder.typicode.com/posts/',
+            testChunks: false,
+            jseditor: ''
+          },
+          attrs: {
+            accept: 'image/*'
+          },
+          snackbar: false,
+          snackbarerror: false,
+          x: null,
+          mode: '',
+          timeout: 600000,
+          text: 'Hello, I\'m a snackbar',
+          dialog: false,
+          notifications: false,
+          sound: true,
+          widgets: false,
+          groupid: 20143,
+          pk: 8
+        },
+    methods: {
+      complete () {
+        console.log('complete', arguments)
+      },
+      fileComplete () {
+        console.log('file complete', arguments)
+      },
+      snackbarCall: function (value) {
+        console.log(value)
+        this.snackbar = value.snackbar
+        this.image = value.image
+      },
+      uploadFiles(){
+        this.snackbarerror = true
+        this.$confirm(this.snackbarerror, options).then(c => { alert(123) })
+        // your custom upload method
+        const form = this.formDataUpload
+        console.log(form)
+        
+      },
+      formDataClickHander: function (value) {
+        console.log(value+'<==========')
+        this.formDataUpload = value
+      },
+      removeAvata: function (value) {
+        console.log(value)
+        this.image=''
+      },
+      submit () {
+        if (this.$refs.form.validate()) {
+          // Native form submission is not yet supported
+         alert(123);
+        }
+      },
+      clear () {
+        console.log(this.$refs);
+        this.$refs.form.reset()
+      },
+      handleImageAdded: function(file, Editor, cursorLocation) {
+        // An example of using FormData
+        // NOTE: Your key could be different such as:
+        // formData.append('file', file)
+
+        var formData = new FormData();
+        formData.append('image', file)
+
+        axios({
+          url: 'https://fakeapi.yoursite.com/images',
+          method: 'POST',
+          data: formData
+        })
+        .then((result) => {
+          let url = result.data.url // Get url from response
+          Editor.insertEmbed(cursorLocation, 'image', url);
+        })
+        .catch((err) => {
+          console.log(err);
+        })
+      }
+    },
+        mounted () {
+          this.$nextTick(() => {
+            window.uploader = this.$refs.uploader.uploader
+          })
+        }
+      });
+      var ratingForm = new VueJX({
+        el: 'rating_form',
+        jxtemplate: 'rating_form_template',
+        schema: {
+          "fullName": {
+            "id": "fullName",
+            "name": "fullName",
+            "required_msg": "not null",
+            "type": "text",
+            "label": "Full Name: ",
+            "icon_show": false,
+            "icon_active": "visibility",
+            "icon_off": "visibility_off",
+            "hint": "At least 3 characters",
+            "min": 3,
+            "counter": 12,
+            "counter_hint": "At maximum 12 characters",
+            "prefix": "$"
+          },
+          "fullEmail": {
+            "id": "fullEmail",
+            "name": "fullEmail",
+            "type": "email",
+            "label": "Full Name: ",
+            "required": true,
+            "indicator": true,
+            "onClick": "say('123')",
+            "event": {
+              say: function (message) {
+                console.log(111111111111111);
+                this.fullName = "new value";
+              },
+              helo: function (message) {
+                alert(1)
+              }
+            }
+          },
+          "fullTime": {
+            "id": "fullTime",
+            "name": "fullTime",
+            "type": "time",
+            "label": "Full fullTime: ",
+            "append_icon":"access_time",
+            "format": "24hr"
+          },
+          "fullMonth": {
+            "id": "fullMonth",
+            "name": "fullMonth",
+            "type": "month",
+            "label": "Full fullMonth: ",
+            "append_icon":"event",
+            "date_format": "${month}/${year}",
+            "date_parser": "${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}"
+          },
+          "fullDate": {
+            "id": "fullDate",
+            "name": "fullDate",
+            "type": "date",
+            "required": true,
+            "label": "Full fullDate: ",
+            "append_icon":"event",
+            "date_format": "${day}/${month}/${year}",
+            "date_parser": "${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}"
+          },
+          "fullTimeView": {
+            "id": "fullTimeView",
+            "name": "fullTimeView",
+            "type": "timeview",
+            "format": "24hr"
+          },
+          "fullMonthView": {
+            "id": "fullMonthView",
+            "name": "fullMonthView",
+            "type": "monthview"
+          },
+          "fullDateView": {
+            "id": "fullDateView",
+            "name": "fullDateView",
+            "type": "dateview"
+          },
+          "fullSlider": {
+            "id": "fullSlider",
+            "name": "fullSlider",
+            "type": "slider",
+            "label": "percent",
+            "step": 10,
+            "input": "sayslider(123)",
+            "event": {
+              sayslider: function (message) {
+                console.log(this.fullSlider);
+              }
+            }
+          },
+          "fullSelect": {
+            "id": "fullSelect",
+            "name": "fullSelect",
+            "type": "select",
+            "required": true,
+            "label": "label fullSelect",
+            "append_icon":"map",
+            "item_text": "state",
+            "item_value": "abbr",
+            "multiple": true,
+            "tags": true,
+            "chips": true,
+            "deletable_chips": true,
+            "hide_selected": true,
+            "loading": false,
+            "no-data-text": "Lua chon selected",
+            "items": [],
+            "onLoad": "_init()",
+            "onKeyup": "filterRemote($event)",
+            "event": {
+              _init: function(){
+                
+                if(this.fullSelectItems.length <= 0){
+                  
+                  this.fullSelectItems = [
+                    { state: 'Florida', abbr: 1 },
+                    { state: 'Georgia', abbr: 2 },
+                    { state: 'Nebraska', abbr: 3 },
+                    { state: 'California', abbr: 4 },
+                    { state: 'New York', abbr: 5 }
+                  ];
+                }
+
+              }, 
+              filterRemote: function (event) {
+                
+                if (event.keyCode === 13) {
+                  
+
+                  var url ="https://gist.githubusercontent.com/mshafrir/2646763/raw/8b0dbb93521f5d6889502305335104218454c2bf/states_titlecase.json?q=${event.target.value}";
+                  axios.get(url).then((response) => {
+                    var newDatas = [];
+                    var index = 0;
+                    for(var key in response.data){
+                      newDatas.push({
+                        "state": response.data[key].name,
+                        "abbr": response.data[key].abbreviation,
+                      });
+                      
+                      index = index+1;
+                    }
+                    this.fullSelectItems = newDatas;
+                    console.log(this.fullSelectItems);
+                  }).catch( error => { console.log(error); });
+                }
+              }
+            }
+          },
+          "fullSwitches": {
+            "id": "fullSwitches",
+            "name": "fullSwitches",
+            "type": "switch",
+            "label": "feel good !: ",
+            "labelclass": "xs2",
+            "inputclass": "xs10",
+            "switch_right": true,
+            "switch_inline": true,
+            "prepend_icon":"map",
+            "tabindex": 0,
+            "items": [
+              {
+                "label": "yes",
+                "color": "red",
+                "value": "red",
+              },
+              {
+                "label": "no",
+                "color": "indigo",
+                "value": "indigo",
+              },
+              {
+                "label": "no2",
+                "color": "warning",
+                "value": "warning",
+              }
+            ],
+            "onLoad": "_initSwitch()",
+            "onChange": "changeSwitch()",
+            "event": {
+              _initSwitch: function(){
+                
+                if(this.fullSwitches.length <= 0){
+                  
+                  this.fullSwitches = [ "red", "indigo"];
+
+                }
+
+              },
+              changeSwitch: function(){
+                console.log(this.fullSwitches);
+              }
+            }
+          },
+          "fullCheckBoxs": {
+            "id": "fullCheckBoxs",
+            "name": "fullCheckBoxs",
+            "type": "checkbox",
+            "label": "fullCheckBoxs: ",
+            "labelclass": "xs2",
+            "inputclass": "xs10",
+            "switch_inline": true,
+            "tabindex": 0,
+            "items": [
+              {
+                "label": "yes",
+                "color": "red",
+                "value": "red",
+              },
+              {
+                "label": "no",
+                "color": "indigo",
+                "value": "indigo",
+              },
+              {
+                "label": "no2",
+                "color": "warning",
+                "value": "warning",
+              }
+            ],
+            "onLoad": "_initCheckbox()",
+            "onChange": "changeCheckbox()",
+            "event": {
+              _initCheckbox: function(){
+                
+                if(this.fullCheckBoxs.length <= 0){
+                  
+                  this.fullCheckBoxs = [ "red", "indigo"];
+
+                }
+
+              },
+              changeCheckbox: function(){
+                console.log(this.fullCheckBoxs);
+              }
+            }
+          },
+          "fullRadioBoxs": {
+            "id": "fullRadioBoxs",
+            "name": "fullRadioBoxs",
+            "type": "radio",
+            "label": "fullRadioBoxs: ",
+            "labelclass": "xs2",
+            "inputclass": "xs10",
+            "switch_inline": true,
+            "tabindex": 0,
+            "items": [
+              {
+                "label": "yes",
+                "color": "red",
+                "value": "red",
+              },
+              {
+                "label": "no",
+                "color": "indigo",
+                "value": "indigo",
+              },
+              {
+                "label": "no2",
+                "color": "warning",
+                "value": "warning",
+              }
+            ],
+            "onLoad": "_initRadiobox()",
+            "onChange": "changeRadiobox()",
+            "event": {
+              _initRadiobox: function(){
+                
+                  this.fullRadioBoxs = "red";
+
+              },
+              changeRadiobox: function(){
+                console.log(this.fullRadioBoxs);
+              }
+            }
+          }
+        }
+      });
+      
+      ratingForm._builder("el");
+
+    });
+
+  </script>
+
+
+</body>
+
 </html>
